@@ -7,11 +7,10 @@
 <body>
  <h1>入力内容確認</h1>
 
- <?php
-
-   $nickname=$_POST['nickname'];
-   $email=$_POST['email'];
-   $content=$_POST['content'];
+ <?php 
+$nickname=htmlspecialchars($_POST['nickname']);
+$email=htmlspecialchars($_POST['email']);
+$content=htmlspecialchars($_POST['content']);
 
    if ($nickname=='') {
 	echo '名前：未入力です';
