@@ -11,7 +11,7 @@ $content=htmlspecialchars($_POST['content']);
   $dbh->query('SET NAMES utf8');
 
   // ２．SQL文を実行する
-  $sql = "INSERT INTO `survey` (`nickname`, `email`, `content`) VALUES (?, ?, ?);";
+  $sql = "INSERT INTO `survey` (`nickname`, `email`, `content`,`created`) VALUES (?, ?, ?,now());";
 
   //プリペアーステートメント
   $data=array($nickname,$email,$content);

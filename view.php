@@ -8,7 +8,7 @@ $dbh = new PDO($dsn, $user, $password);
 $dbh->query('SET NAMES utf8');
 
 // ２．SQL文を実行する
-$sql = 'SELECT * FROM `survey`';
+$sql = 'SELECT * FROM `survey` ORDER BY `created` DESC';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 
@@ -47,6 +47,7 @@ foreach ($survey_line as $one_otoiawase) {
 	<?php echo $one_otoiawase["nickname"]; ?><br>
 	<?php echo $one_otoiawase["email"]; ?><br>
 	<?php echo $one_otoiawase["content"]; ?><br>
+  <?php echo $one_otoiawase["created"]; ?><br>
 	<hr>
 <?php
 }
